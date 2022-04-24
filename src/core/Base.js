@@ -1,4 +1,5 @@
 import React from "react";
+import Menu from "./Menu";
 
 const Base = ({
   title = "My Title",
@@ -8,6 +9,7 @@ const Base = ({
 }) => {
   return (
     <div>
+      <Menu />
       <div className="container-fluid">
         <div className="jumbotron bg-dark text-white text-center">
           <h2 className="display-4">{title}</h2>
@@ -21,7 +23,7 @@ const Base = ({
           <button className="btn btn-warning btn-lg">Contact Us</button>
           <div className="container">
             <span className="text-warning">
-              An Amazing Django React fullstack course
+              An Amazing Online Store!
             </span>
           </div>
         </div>

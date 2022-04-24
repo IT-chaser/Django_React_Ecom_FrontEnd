@@ -1,27 +1,12 @@
-import React from "react";
-import { Route, Navigate } from "react-router-dom";
+import React from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { isAuthenticated } from '.';
+const PrivateRoutes = () => {
+  //const auth = null; // determine if authorized, from context or however you're doing it
+    // If authorized, return an outlet that will render child elements
+    // If not, return element that will navigate to login page
+  return isAuthenticated() ? <Outlet /> : <Navigate to="/signin" />;
+}
 
-import { isAuthenticated } from "./index";
-
-const PrivateRoutes = ({ component: Component, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        isAuthenticated()
-          ? (
-            <Component {...props} />
-          )
-          : (
-            <Navigate
-              to={{
-                pathname: "/signin",
-                state: { from: props.location },
-              }}
-            />
-          )}
-    />
-  );
-};
 
 export default PrivateRoutes;
