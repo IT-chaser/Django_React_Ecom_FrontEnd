@@ -18,7 +18,7 @@ const Routez = () => {
                     <Route path="/cart" element={<Cart />} />
                     <Route path='/' element={<PrivateRoutes/>}>
                         <Route exact path='/user/dashboard' element={<UserDashboard/>}/>
-                    </Route>s
+                    </Route>
                 </Routes>
             </Fragment>
         </BrowserRouter>
